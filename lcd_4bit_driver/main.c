@@ -162,7 +162,7 @@ int main()
     lcd_init();
 
     const uint8* msg = "Let's display the sizes of the standard "
-		       "data types regarding this C compiler!";
+                       "data types regarding this C compiler!";
 
     for (uint8 i = 0; msg[i] != '\0'; ++i)
     {
