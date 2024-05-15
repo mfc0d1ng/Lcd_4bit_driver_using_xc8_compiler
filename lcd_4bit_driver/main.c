@@ -8,13 +8,13 @@
 
 typedef unsigned char uint8;
 
-#define LCD_CLEAR 	         0x01
-#define LCD_CURSOR_HOME	         0x02
+#define LCD_CLEAR                0x01
+#define LCD_CURSOR_HOME          0x02
 #define LCD_WRITE_ORDINARY       0x06
 #define LCD_ENABLE_DISPLAY	 0x0c
 #define LCD_8BIT_MODE		 0x38
 #define LCD_4BIT_MODE		 0x28
-#define LCD_DDRAM		 0x80
+#define LCD_DDRAM                0x80
 
 #define LCD_RS 		 LATCbits.LC0
 #define LCD_EN		 LATCbits.LC1
@@ -166,12 +166,12 @@ int main()
 
     for (uint8 i = 0; msg[i] != '\0'; ++i)
     {
-	if(i == 40)
-	{
-	    lcd_cursor(2, 1);
-	}
-	lcd_char(msg[i]);
-	__delay_ms(60);
+        if(i == 40)
+        {
+            lcd_cursor(2, 1);
+        }
+        lcd_char(msg[i]);
+        __delay_ms(60);
     }
 	
     __delay_ms(3000);
@@ -179,39 +179,39 @@ int main()
     uint8 buffer[3];
 
     const uint8 std_types_sizes[] = {
-					  sizeof(signed char),
-					  sizeof(unsigned char),
-					  sizeof(signed short),
-					  sizeof(unsigned short),
-					  sizeof(signed int),
-					  sizeof(unsigned int),
-					  sizeof(signed long int), 
-					  sizeof(unsigned long int),
-					  sizeof(signed long long int),
-					  sizeof(unsigned long long int),
-					  sizeof(float),
-					  sizeof(double)
+                                       sizeof(signed char),
+                                       sizeof(unsigned char),
+                                       sizeof(signed short),
+                                       sizeof(unsigned short),
+                                       sizeof(signed int),
+                                       sizeof(unsigned int),
+                                       sizeof(signed long int), 
+                                       sizeof(unsigned long int),
+                                       sizeof(signed long long int)
+                                       sizeof(unsigned long long int),
+                                       sizeof(float),
+                                       sizeof(double)
 				     };
 
     const uint8* texts[] = {
-				 "size of (signed char): ",
-				 "size of (unsigned char): ",
-				 "size of (signed short): ",
-				 "size of (unsigned short): ",
-				 "size of (signed int): ",
-				 "size of (unsigned int): ",
-				 "size of (signed long int): ",
-				 "size of (unsigned long int): ",
-				 "size of (signed long long int): ",
-				 "size of (unsigned long long int): ",
-				 "size of (float): ",
-				 "size of (double): "
+                              "size of (signed char): ",
+                              "size of (unsigned char): ",
+                              "size of (signed short): ",
+                              "size of (unsigned short): ",
+                              "size of (signed int): ",
+                              "size of (unsigned int): ",
+                              "size of (signed long int): ",
+                              "size of (unsigned long int): ",
+                              "size of (signed long long int): ",
+                              "size of (unsigned long long int): ",
+                              "size of (float): ",
+                              "size of (double): "
 			   };
 
     while (true)
     {
-	for (uint8 i = 0; i < 12; ++i)
-	{
+        for (uint8 i = 0; i < 12; ++i)
+        {
 	    lcd_cmd(LCD_CLEAR);
 	    __delay_ms(250);
 	    uint8_toString(buffer, std_types_sizes[i]);
