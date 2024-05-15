@@ -11,9 +11,9 @@ typedef unsigned char uint8;
 #define LCD_CLEAR                0x01
 #define LCD_CURSOR_HOME          0x02
 #define LCD_WRITE_ORDINARY       0x06
-#define LCD_ENABLE_DISPLAY	 0x0c
-#define LCD_8BIT_MODE		 0x38
-#define LCD_4BIT_MODE		 0x28
+#define LCD_ENABLE_DISPLAY       0x0c
+#define LCD_8BIT_MODE            0x38
+#define LCD_4BIT_MODE            0x28
 #define LCD_DDRAM                0x80
 
 #define LCD_RS 		 LATCbits.LC0
@@ -191,7 +191,7 @@ int main()
                                        sizeof(unsigned long long int),
                                        sizeof(float),
                                        sizeof(double)
-				     };
+                                    };
 
     const uint8* texts[] = {
                               "size of (signed char): ",
@@ -206,19 +206,19 @@ int main()
                               "size of (unsigned long long int): ",
                               "size of (float): ",
                               "size of (double): "
-			   };
+                           };
 
     while (true)
     {
         for (uint8 i = 0; i < 12; ++i)
         {
-	    lcd_cmd(LCD_CLEAR);
-	    __delay_ms(250);
-	    uint8_toString(buffer, std_types_sizes[i]);
-	    lcd_out(1, 5, texts[i]);
-	    lcd_out(2, 10, buffer);
-	    lcd_out(2, 12, "bytes");
-	    __delay_ms(3000);
+            lcd_cmd(LCD_CLEAR);
+            __delay_ms(250);
+            uint8_toString(buffer, std_types_sizes[i]);
+            lcd_out(1, 5, texts[i]);
+            lcd_out(2, 10, buffer);
+            lcd_out(2, 12, "bytes");
+            __delay_ms(3000);
         }
     }
 
