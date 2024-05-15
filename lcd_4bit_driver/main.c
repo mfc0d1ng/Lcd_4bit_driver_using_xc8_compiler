@@ -25,7 +25,7 @@ typedef unsigned char uint8;
 /**
  * @brief Writes a chunk of data on the data pins.
  * @param __chunk A Chunk of data to be written 
- * 	          on the data pins.
+ *                on the data pins.
  */
 void write(uint8 __chunk)
 {
