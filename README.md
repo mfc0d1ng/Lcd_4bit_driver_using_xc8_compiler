@@ -1,5 +1,5 @@
 # LCD 4-bit driver
-This is an implementation of lcd driver in 4-bit mode, it's designed by using xc8 compiler and provides 7 basic interfaces for controlling the lcd functionality :- 
+This is an implementation of lcd driver in 4-bit mode, it's designed by using xc8 compiler and provides 7 basic interfaces for controlling the lcd functionality :
  * lcd_init();
  * lcd_cmd();
  * lcd_data();
